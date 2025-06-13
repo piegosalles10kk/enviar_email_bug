@@ -2,7 +2,8 @@ const nodemailer = require('nodemailer');
 
 // Configurar transporte Nodemailer para Gmail
 const transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    host: "smtp.gmail.com",
+    port: 587,
     auth: {
         user: 'chamadoschromatox@gmail.com', 
         pass: 'glsdpiqtmubibzzf', 

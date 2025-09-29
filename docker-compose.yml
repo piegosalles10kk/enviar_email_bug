@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  email-sender:
+    # Nome do serviço no compose
+    container_name: email-sender-app
+    
+    # Define que a imagem será construída usando o Dockerfile no diretório atual
+    build: .
+    
+    # Mapeia a porta do contêiner (3000) para uma porta na sua máquina (3000)
+    ports:
+      - "3000:3000"
+      
+    # Reinicia o contêiner em caso de falha para garantir que o serviço permaneça ativo
+    restart: always
+
+    # === CARREGAMENTO DE VARIÁVEIS DE AMBIENTE ===
+    # Usa um arquivo .env para carregar as credenciais de forma segura
+    env_file:
+      - .env
